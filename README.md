@@ -1263,3 +1263,16 @@ Why did I put this here?
 	'occupied_by/4',673316,673316,0
 	...
 ```
+
+
+Shared library
+==============
+
+From the trealla dir
+
+```
+$ make CC=tcc libtpl.so
+$ gcc -o example example.c -lffi -ldl
+$ ./example
+[h,e,l,l,o]
+```
