@@ -177,6 +177,9 @@ tpl: $(OBJECTS) Makefile README.md LICENSE
 	$(CC) $(CFLAGS) -o src/version.o -c src/version.c
 	$(CC) $(CFLAGS) -o tpl $(OBJECTS) $(OPT) $(LDFLAGS)
 
+libtpl.so: $(OBJS)
+	$(CC) $(CFLAGS) -shared -o libtpl.so $(OBJECTS) $(OPT) $(LDFLAGS) -Wl,--export-dynamic
+
 profile:
 	$(MAKE) 'OPT=$(OPT) -O0 -pg -DDEBUG'
 
